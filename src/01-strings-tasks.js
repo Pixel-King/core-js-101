@@ -110,8 +110,10 @@ function removeLeadingAndTrailingWhitespaces( value ) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(/* value, count */) {
-   
+function repeatString( value, count) {
+   let str = ""
+   for(let i =0; i< count; i++) str +=value
+   return str;
 }
 
 /**
@@ -156,8 +158,8 @@ function unbracketTag(/* str */) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-   
+function convertToUpperCase(str) {
+   return str.toUpperCase();
 }
 
 /**
@@ -240,8 +242,8 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-   
+function isString( value ) {
+  return value.includes('')
 }
 
 
