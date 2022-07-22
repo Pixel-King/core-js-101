@@ -204,10 +204,10 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  let top = `┌${'─'.repeat(width-2)}┐\n`;
-  let between = `|${" ".repeat(width-2)}|\n`; 
-  let bottom = `└${'─'.repeat(width-2)}┘\n`;
-  return `${top}${between.repeat(height-2)}${bottom}`
+  const top = `┌${'─'.repeat(width - 2)}┐\n`;
+  const between = `|${' '.repeat(width - 2)}|\n`;
+  const bottom = `└${'─'.repeat(width - 2)}┘\n`;
+  return `${top}${between.repeat(height - 2)}${bottom}`;
 }
 /**
  * Encode specified string with ROT13 cipher
