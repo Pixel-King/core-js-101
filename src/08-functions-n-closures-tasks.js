@@ -24,7 +24,7 @@
  *
  */
 function getComposition(/* f, g */) {
-    
+
 }
 
 
@@ -45,7 +45,7 @@ function getComposition(/* f, g */) {
  *
  */
 function getPowerFunction(/* exponent */) {
-    
+
 }
 
 
@@ -63,7 +63,7 @@ function getPowerFunction(/* exponent */) {
  *   getPolynom()      => null
  */
 function getPolynom() {
-    
+
 }
 
 
@@ -82,7 +82,7 @@ function getPolynom() {
  *   memoizer() => the same random number  (next run, returns the previous cached result)
  */
 function memoize(/* func */) {
-    
+
 }
 
 
@@ -102,7 +102,7 @@ function memoize(/* func */) {
  * retryer() => 2
  */
 function retry(/* func, attempts */) {
-    
+
 }
 
 
@@ -130,7 +130,7 @@ function retry(/* func, attempts */) {
  *
  */
 function logger(/* func, logFunc */) {
-    
+
 }
 
 
@@ -148,7 +148,7 @@ function logger(/* func, logFunc */) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(/* fn, ...args1 */) {
-    
+
 }
 
 
@@ -170,7 +170,7 @@ function partialUsingArguments(/* fn, ...args1 */) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(/* startFrom */) {
-    
+
 }
 
 

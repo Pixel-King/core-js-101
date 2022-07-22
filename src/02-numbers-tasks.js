@@ -20,7 +20,7 @@
  *   5, 5  => 25
  */
 function getRectangleArea(/* width, height */) {
-      
+
 }
 
 
@@ -36,7 +36,7 @@ function getRectangleArea(/* width, height */) {
  *   0    => 0
  */
 function getCircleCircumference(/* radius */) {
-      
+
 }
 
 /**
@@ -52,7 +52,7 @@ function getCircleCircumference(/* radius */) {
  *  -3, 3  => 0
  */
 function getAverage(/* value1, value2 */) {
-      
+
 }
 
 /**
@@ -71,7 +71,7 @@ function getAverage(/* value1, value2 */) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-      
+
 }
 
 /**
@@ -87,7 +87,7 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(/* a, b */) {
-      
+
 }
 
 
@@ -110,7 +110,7 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-      
+
 }
 
 /**
@@ -126,7 +126,7 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     0     => 0
  */
 function getLastDigit(/* value */) {
-      
+
 }
 
 
@@ -142,7 +142,7 @@ function getLastDigit(/* value */) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(/* value */) {
-      
+
 }
 
 /**
@@ -159,7 +159,7 @@ function parseNumberFromString(/* value */) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(/* a, b, c */) {
-      
+
 }
 
 
@@ -181,7 +181,7 @@ function getParallelepipedDiagonal(/* a, b, c */) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(/* num, pow */) {
-      
+
 }
 
 /**
@@ -202,7 +202,7 @@ function roundToPowerOfTen(/* num, pow */) {
  *   17 => true
  */
 function isPrime(/* n */) {
-      
+
 }
 
 /**
@@ -221,7 +221,7 @@ function isPrime(/* n */) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(/* value, def */) {
-      
+
 }
 
 module.exports = {

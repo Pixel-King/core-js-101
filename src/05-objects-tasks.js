@@ -21,7 +21,7 @@
  *    console.log(r.getArea());   // => 200
  */
 function Rectangle(/* width, height */) {
-      
+
 }
 
 
@@ -36,7 +36,7 @@ function Rectangle(/* width, height */) {
  *    { width: 10, height : 20 } => '{"height":10,"width":20}'
  */
 function getJSON(/* obj */) {
-      
+
 }
 
 
@@ -52,7 +52,7 @@ function getJSON(/* obj */) {
  *
  */
 function fromJSON(/* proto, json */) {
-      
+
 }
 
 
@@ -112,31 +112,31 @@ function fromJSON(/* proto, json */) {
 
 const cssSelectorBuilder = {
   element(/* value */) {
-        
+
   },
 
   id(/* value */) {
-        
+
   },
 
   class(/* value */) {
-        
+
   },
 
   attr(/* value */) {
-        
+
   },
 
   pseudoClass(/* value */) {
-        
+
   },
 
   pseudoElement(/* value */) {
-        
+
   },
 
   combine(/* selector1, combinator, selector2 */) {
-        
+
   },
 };
 

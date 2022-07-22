@@ -29,7 +29,7 @@
  *                                                    //  Ask her again.';
  */
 function willYouMarryMe(/* isPositiveAnswer */) {
-      
+
 }
 
 
@@ -49,7 +49,7 @@ function willYouMarryMe(/* isPositiveAnswer */) {
  *
  */
 function processAllPromises(/* array */) {
-      
+
 }
 
 /**
@@ -72,7 +72,7 @@ function processAllPromises(/* array */) {
  *
  */
 function getFastestPromise(/* array */) {
-      
+
 }
 
 /**
@@ -93,7 +93,7 @@ function getFastestPromise(/* array */) {
  *
  */
 function chainPromises(/* array, action */) {
-      
+
 }
 
 module.exports = {
