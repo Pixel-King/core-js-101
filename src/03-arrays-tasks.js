@@ -358,8 +358,8 @@ function sortDigitNamesByNumericOrder(/* arr */) {
  *   [ -1, 1, -1, 1 ]      => 0
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
-function getItemsSum(/* arr */) {
-
+function getItemsSum(arr) {
+  return arr.reduce((sum, a) => sum + a, 0);
 }
 
 /**
