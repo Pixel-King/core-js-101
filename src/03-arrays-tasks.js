@@ -8,6 +8,7 @@
  ******************************************************************************************** */
 
 const { isString } = require('./01-strings-tasks');
+const { getMatrixProduct } = require('./07-conditions-n-loops-tasks');
 
 
 /**
@@ -501,8 +502,8 @@ function getIntervalArray(start, end) {
  *   [ 'a', 'a', 'a', 'a' ]  => [ 'a' ]
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
-function distinct(/* arr */) {
-
+function distinct(arr) {
+  return arr.filter((itm, idx, ar) => ar.indexOf(itm) === idx);
 }
 
 /**
@@ -535,8 +536,14 @@ function distinct(/* arr */) {
  *    "Poland" => ["Lodz"]
  *   }
  */
-function group(/* array, keySelector, valueSelector */) {
-
+function group(array, keySelector, valueSelector) {
+  let map = new Map();
+  array.forEach((itm) => {
+    let key = keySelector(itm);
+    if (map.has(key)) map.get(key).push(valueSelector(itm))
+    else map.set(key, [valueSelector(itm)]);
+  });
+  return map;
 }
 
 
