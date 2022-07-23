@@ -8,7 +8,7 @@
  ******************************************************************************************** */
 
 const { isString } = require('./01-strings-tasks');
-const { getMatrixProduct } = require('./07-conditions-n-loops-tasks');
+// const { getMatrixProduct } = require('./07-conditions-n-loops-tasks');
 
 
 /**
@@ -537,10 +537,10 @@ function distinct(arr) {
  *   }
  */
 function group(array, keySelector, valueSelector) {
-  let map = new Map();
+  const map = new Map();
   array.forEach((itm) => {
-    let key = keySelector(itm);
-    if (map.has(key)) map.get(key).push(valueSelector(itm))
+    const key = keySelector(itm);
+    if (map.has(key)) map.get(key).push(valueSelector(itm));
     else map.set(key, [valueSelector(itm)]);
   });
   return map;
