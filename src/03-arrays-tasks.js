@@ -561,7 +561,9 @@ function group(array, keySelector, valueSelector) {
  *   ['one','two','three'], x=>x.split('')  =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
 function selectMany(arr, childrenSelector) {
-  return arr.map((itm) => childrenSelector(itm));
+  return arr.reduce((pre, itm) => {
+    return pre.concat(childrenSelector(itm));
+  }, []);
 }
 
 
@@ -577,8 +579,10 @@ function selectMany(arr, childrenSelector) {
  *   ['one','two','three'], [2]       => 'three'  (arr[2])
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
-function getElementByIndexes(/* arr, indexes */) {
-
+function getElementByIndexes(arr, indexes) {
+  let a = arr;
+  for (let i =0; i < indexes.length; i += 1) a = a[indexes[i]];
+  return a;
 }
 
 
