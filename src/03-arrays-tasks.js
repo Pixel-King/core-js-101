@@ -444,7 +444,7 @@ function toStringList(arr) {
  *    ]
  */
 function sortCitiesArray(arr) {
-  return arr.sort((a, b) => `${a.country}${a.city}`.localeCompare(`${b.country}${b.city}`))
+  return arr.sort((a, b) => `${a.country}${a.city}`.localeCompare(`${b.country}${b.city}`));
 }
 
 /**
