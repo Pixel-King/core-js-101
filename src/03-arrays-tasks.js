@@ -7,6 +7,8 @@
  *                                                                                            *
  ******************************************************************************************** */
 
+const { isString } = require('./01-strings-tasks');
+
 
 /**
  * Returns an index of the specified element in array or -1 if element is not found
@@ -35,8 +37,14 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-
+function generateOdds(len) {
+  const arr = [];
+  for (let i = 1; arr.length < len; i += 1) {
+    if (i !== len) {
+      arr.push(i);
+    }
+  }
+  return arr;
 }
 
 
@@ -52,8 +60,8 @@ function generateOdds(/* len */) {
  *    [0, 1, 2, 3, 4, 5] => [0, 1, 2, 3, 4, 5,   0, 1, 2, 3, 4, 5]
  *    [] => []
  */
-function doubleArray(/* arr */) {
-
+function doubleArray(arr) {
+  return arr.concat(arr);
 }
 
 
@@ -68,8 +76,8 @@ function doubleArray(/* arr */) {
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => []
  */
-function getArrayOfPositives(/* arr */) {
-
+function getArrayOfPositives(arr) {
+  return arr.filter((itm) => itm > 0);
 }
 
 /**
@@ -83,8 +91,8 @@ function getArrayOfPositives(/* arr */) {
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
-function getArrayOfStrings(/* arr */) {
-
+function getArrayOfStrings(arr) {
+  return arr.filter((itm) => isString(itm));
 }
 
 /**
@@ -100,8 +108,18 @@ function getArrayOfStrings(/* arr */) {
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
-function removeFalsyValues(/* arr */) {
-
+function removeFalsyValues(arr) {
+  const arr1 = [];
+  arr.map((itm) => {
+    const itmType = typeof itm;
+    if (itmType === 'string') {
+      if (itm.length > 0) arr1.push(itm);
+    } else if (itmType === 'number') {
+      if (itm > 0) arr1.push(itm);
+    }
+    return itm;
+  });
+  return arr1;
 }
 
 /**
@@ -115,8 +133,8 @@ function removeFalsyValues(/* arr */) {
  *    => [ 'PERMANENT-INTERNSHIP', 'GLUTINOUS-SHRIEK', 'MULTIPLICATIVE-ELEVATION' ],
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
-function getUpperCaseStrings(/* arr */) {
-
+function getUpperCaseStrings(arr) {
+  return arr.map((itm) => itm.toUpperCase());
 }
 
 
@@ -130,8 +148,8 @@ function getUpperCaseStrings(/* arr */) {
  *    [ '', 'a', 'bc', 'def', 'ghij' ]  => [ 0, 1, 2, 3, 4 ]
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
-function getStringsLength(/* arr */) {
-
+function getStringsLength(arr) {
+  return arr.map((itm) => itm.length);
 }
 
 /**
@@ -145,8 +163,10 @@ function getStringsLength(/* arr */) {
  *    [ 1, 3, 4, 5 ], 2, 1  => [ 1, 2, 3, 4, 5 ]
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
-function insertItem(/* arr, item, index */) {
-
+function insertItem(arr, item, index) {
+  const arr1 = arr;
+  arr1.splice(index, 0, item);
+  return arr1;
 }
 
 /**
@@ -159,8 +179,10 @@ function insertItem(/* arr, item, index */) {
  *    [ 1, 3, 4, 5 ], 2 => [ 1, 3 ]
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
-function getHead(/* arr, n */) {
-
+function getHead(arr, n) {
+  const arr1 = arr;
+  arr1.splice(n, arr1.length - n);
+  return arr1;
 }
 
 
@@ -174,8 +196,8 @@ function getHead(/* arr, n */) {
  *    [ 1, 3, 4, 5 ], 2  => [ 4, 5 ]
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
-function getTail(/* arr, n */) {
-
+function getTail(arr, n) {
+  return arr.splice(arr.length - n);
 }
 
 
@@ -199,8 +221,8 @@ function getTail(/* arr, n */) {
  *    +'20,21,22,23,24\n'
  *    +'30,31,32,33,34'
  */
-function toCsvText(/* arr */) {
-
+function toCsvText(arr) {
+  return arr.map((itm) => `${itm.join(',')}`).join('\n');
 }
 
 /**
@@ -214,8 +236,8 @@ function toCsvText(/* arr */) {
  *   [ 0, 1, 2, 3, 4, 5 ] => [ 0, 1, 4, 9, 16, 25 ]
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
-function toArrayOfSquares(/* arr */) {
-
+function toArrayOfSquares(arr) {
+  return arr.map((itm) => itm ** 2);
 }
 
 
@@ -352,8 +374,8 @@ function getItemsSum(/* arr */) {
  *  [ -1, 'false', null, 0 ] => 2
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
-function getFalsyValuesCount(/* arr */) {
-
+function getFalsyValuesCount(arr) {
+  return arr.filter((itm) => !Boolean(itm)).length;
 }
 
 /**
@@ -385,8 +407,8 @@ function findAllOccurrences(/* arr, item */) {
  *    [1, 2, 3, 4, 5]                   => '1,2,3,4,5'
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
-function toStringList(/* arr */) {
-
+function toStringList(arr) {
+  return arr.join(',');
 }
 
 
@@ -522,8 +544,8 @@ function group(/* array, keySelector, valueSelector */) {
  *   [[1, 2], [3, 4], [5, 6]], (x) => x     =>   [ 1, 2, 3, 4, 5, 6 ]
  *   ['one','two','three'], x=>x.split('')  =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
-function selectMany(/* arr, childrenSelector */) {
-
+function selectMany(arr, childrenSelector) {
+  return arr.map((itm) => childrenSelector(itm));
 }
 
 
