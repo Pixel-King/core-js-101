@@ -443,8 +443,8 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(/* arr */) {
-
+function sortCitiesArray(arr) {
+  return arr.sort((a, b) => `${a.country}${a.city}`.localeCompare(`${b.country}${b.city}`))
 }
 
 /**
