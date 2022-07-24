@@ -282,8 +282,13 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
-
+function getDigitalRoot(num) {
+  let count = 0;
+  const arr = String(num).split('');
+  for (let i = 0; i < arr.length; i += 1) {
+    count += +arr[i];
+  }
+  return count > 9 ? getDigitalRoot(count) : count;
 }
 
 
@@ -308,8 +313,35 @@ function getDigitalRoot(/* num */) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-function isBracketsBalanced(/* str */) {
+function isBracketsBalanced(str) {
+  const OPEN = ['(', '{', '[', '<'];
+  const PAIR = {
+    ')': '(',
+    '}': '{',
+    ']': '[',
+    '>': '<',
+  };
 
+  const isBracketOk = (stri) => {
+    const stack = [];
+    for (let i = 0; i < stri.length; i += 1) {
+      const sumbol = stri[i];
+      if (OPEN.includes(sumbol)) {
+        stack.push(sumbol);
+      } else {
+        if (stack.length === 0) return false;
+        const lastElem = stack[stack.length - 1];
+
+        if (PAIR[sumbol] === lastElem) {
+          stack.pop();
+        } else {
+          return false;
+        }
+      }
+    }
+    return stack.length === 0;
+  };
+  return isBracketOk(str);
 }
 
 
