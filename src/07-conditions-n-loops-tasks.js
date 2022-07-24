@@ -206,7 +206,9 @@ function findFirstSingleChar(/* str */) {
  *
  */
 function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-  // return `${isStartIncluded ? '[' : '('}${Math.min(a, b)}${Math.max(a, b)}${isEndIncluded ? ']' : ')'}`;
+  // return `${isStartIncluded ?
+  //    '[' : '('}${Math.min(a, b)}${Math.max(a, b)}${isEndIncluded ?
+  //      ']' : ')'}`;
 }
 
 
