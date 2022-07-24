@@ -164,9 +164,8 @@ function doRectanglesOverlap(/* rect1, rect2 */) {
  *
  */
 function isInsideCircle(circle, poin) {
-  return (poin.x < circle.center.x + circle.radius, poin.y < circle.center.y + circle.radius);
+  return (circle.center.x - poin.x) ** 2 + (circle.center.y - poin.y) ** 2 < circle.radius ** 2;
 }
-
 
 /**
  * Returns the first non repeated char in the specified strings otherwise returns null.
@@ -206,8 +205,8 @@ function findFirstSingleChar(/* str */) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
+  return `${isStartIncluded?'[':'('}$${Math.min(a, b)}${Math.max(a, b)}{isEndIncluded?']':')'}`
 }
 
 
