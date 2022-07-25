@@ -156,9 +156,9 @@ function logger(/* func, logFunc */) {
  */
 function partialUsingArguments(fn, ...args1) {
   return (...args2) => {
-    args2.forEach((e) => args1.push(e))
+    args2.forEach((e) => args1.push(e));
     return fn(...args1);
-  }
+  };
 }
 
 
