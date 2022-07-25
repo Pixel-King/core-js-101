@@ -54,7 +54,7 @@ function parseDataFromIso8601(value) {
  *    Date(2015,1,1)    => false
  */
 function isLeapYear(/* date */) {
-
+  // return new Date(data);
 }
 
 
