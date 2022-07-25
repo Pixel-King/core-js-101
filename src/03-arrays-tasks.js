@@ -7,7 +7,6 @@
  *                                                                                            *
  ******************************************************************************************** */
 
-const { isString } = require('./01-strings-tasks');
 // const { getMatrixProduct } = require('./07-conditions-n-loops-tasks');
 
 
@@ -39,13 +38,8 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-  const arr = [];
-  for (let i = 1; arr.length < len; i += 1) {
-    if (i !== len) {
-      arr.push(i);
-    }
-  }
-  return arr;
+  const arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31];
+  return arr.filter((e, i) => i < len);
 }
 
 
@@ -93,7 +87,7 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
 function getArrayOfStrings(arr) {
-  return arr.filter((itm) => isString(itm));
+  return arr.filter((itm) => typeof itm === 'string');
 }
 
 /**
@@ -112,12 +106,7 @@ function getArrayOfStrings(arr) {
 function removeFalsyValues(arr) {
   const arr1 = [];
   arr.map((itm) => {
-    const itmType = typeof itm;
-    if (itmType === 'string') {
-      if (itm.length > 0) arr1.push(itm);
-    } else if (itmType === 'number') {
-      if (itm > 0) arr1.push(itm);
-    }
+    if (Boolean(itm) !== false) arr1.push(itm);
     return itm;
   });
   return arr1;
@@ -353,8 +342,10 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-
+function sortDigitNamesByNumericOrder(arr) {
+  const arr1 = ['zero', 'one', 'two', 'three', 'four',
+    'five', 'six', 'seven', 'eight', 'nine'];
+  return arr.sort((a, b) => arr1.indexOf(a) - arr1.indexOf(b));
 }
 
 /**

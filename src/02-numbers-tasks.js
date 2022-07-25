@@ -52,7 +52,7 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return (value1 + value2) / 2;
+  return (value1 / 2 + value2 / 2);
 }
 
 /**
@@ -181,7 +181,7 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-  return Math.floor(num / 10 ** pow) * 10 ** pow;
+  return Math.round(num / 10 ** pow) * 10 ** pow;
 }
 
 /**
