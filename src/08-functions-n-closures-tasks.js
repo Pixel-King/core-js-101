@@ -177,8 +177,8 @@ function partialUsingArguments(/* fn, ...args1 */) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(startFrom) {
-  const iD = startFrom;
-  return () => iD;
+  const iD = startFrom - 1;
+  return () => iD + 1;
 }
 
 
