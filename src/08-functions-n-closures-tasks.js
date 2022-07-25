@@ -154,8 +154,11 @@ function logger(/* func, logFunc */) {
  *   partialUsingArguments(fn, 'a','b','c')('d') => 'abcd'
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
-function partialUsingArguments(/* fn, ...args1 */) {
-
+function partialUsingArguments(fn, ...args1) {
+  return (...args2) => {
+    args2.forEach((e) => args1.push(e))
+    return fn(...args1);
+  }
 }
 
 
