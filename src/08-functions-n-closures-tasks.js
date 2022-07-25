@@ -60,11 +60,17 @@ function getPowerFunction(exponent) {
  *   getPolynom(2,3,5) => y = 2*x^2 + 3*x + 5
  *   getPolynom(1,-3)  => y = x - 3
  *   getPolynom(8)     => y = 8
- *   getPolynom()      => null
+ *   getPolynom()      => null (x) => a * x ** a
  */
 function getPolynom(...arg) {
-  const [a, b, c] = arg;
-  return a + b + c;
+  const [a = 0, b = 0, c = 0] = arg;
+  return (x) => {
+    if (arg.length === 0) return null;
+    if (arg.length === 1) return a;
+    if (arg.length === 2) return a * x + b;
+    if (arg.length === 3) return a * x ** 2 + b * x + c;
+    return undefined;
+  };
 }
 
 
